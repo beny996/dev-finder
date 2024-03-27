@@ -30,7 +30,11 @@ export function DevFinderVideo({ room }: { room: Room }) {
     const userId = session.data.user.id;
     const client = new StreamVideoClient({
       apiKey,
-      user: { id: userId },
+      user: {
+        id: userId,
+        name: session.data.user.name ?? undefined,
+        image: session.data.user.image ?? undefined,
+      },
       tokenProvider: () => generateTokenAction(),
     });
     setClient(client);
