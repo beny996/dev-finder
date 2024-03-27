@@ -3,6 +3,7 @@
 import { db } from "@/db";
 import { room, Room } from "@/db/schema";
 import { getSession } from "@/lib/auth";
+import { revalidatePath } from "next/cache";
 
 export async function createRoomAction(roomData: Omit<Room, "userId" | "id">) {
   const session = await getSession();
@@ -11,4 +12,6 @@ export async function createRoomAction(roomData: Omit<Room, "userId" | "id">) {
     throw new Error("You must be logged in to create a room!");
   }
   await db.insert(room).values({ ...roomData, userId: session.user.id });
+
+  revalidatePath("/");
 }
