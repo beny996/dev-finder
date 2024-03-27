@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 const formSchema = z.object({
   name: z.string().min(1).max(50),
   description: z.string().min(5).max(50),
-  language: z.string().min(1).max(50),
+  tags: z.string().min(1).max(50),
   githubRepo: z.string().min(1).max(50),
 });
 
@@ -33,7 +33,7 @@ export function CreateRoomForm() {
     defaultValues: {
       name: "",
       description: "",
-      language: "",
+      tags: "",
       githubRepo: "",
     },
   });
@@ -54,7 +54,7 @@ export function CreateRoomForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="Dev finder is awesome!" />
               </FormControl>
               <FormDescription>Enter your room name.</FormDescription>
               <FormMessage />
@@ -68,7 +68,7 @@ export function CreateRoomForm() {
             <FormItem>
               <FormLabel>Description</FormLabel>
               <FormControl>
-                <Textarea {...field} />
+                <Textarea {...field} placeholder="I'm working on a side project. Join me!" />
               </FormControl>
               <FormDescription>Describe what you are going to be coding.</FormDescription>
               <FormMessage />
@@ -77,12 +77,12 @@ export function CreateRoomForm() {
         />
         <FormField
           control={form.control}
-          name="language"
+          name="tags"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Language</FormLabel>
+              <FormLabel>Tags</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="typescript, nextjs, tailwind..." />
               </FormControl>
               <FormDescription>
                 Enter the language you are going to write your program in.
@@ -98,7 +98,7 @@ export function CreateRoomForm() {
             <FormItem>
               <FormLabel>GitHub Repo</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="https://github.com/beny996/dev-finder" />
               </FormControl>
               <FormDescription>
                 Paste the link to the GitHub report for your project.
