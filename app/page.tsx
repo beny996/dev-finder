@@ -1,4 +1,4 @@
-import { splitTags, TagsList } from "@/components/tags-list";
+import { TagsList } from "@/components/tags-list";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,11 +9,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getRooms } from "@/data-access/rooms";
-import { db } from "@/db";
 import { Room } from "@/db/schema";
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import { SearchBar } from "./search-bar";
+import { splitTags } from "@/lib/utils";
 
 function RoomCard({ room }: { room: Room }) {
   return (
