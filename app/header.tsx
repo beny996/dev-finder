@@ -18,8 +18,6 @@ import Link from "next/link";
 function AccountDropdown() {
   const session = useSession();
 
-  const isLoggedIn = !!session.data;
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -32,17 +30,16 @@ function AccountDropdown() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        {isLoggedIn ? (
-          <DropdownMenuItem onClick={() => signOut()}>
-            <LogOutIcon className="mr-2" />
-            Sign out
-          </DropdownMenuItem>
-        ) : (
-          <DropdownMenuItem onClick={() => signIn("google")}>
-            <LogInIcon className="mr-2" />
-            Sign in
-          </DropdownMenuItem>
-        )}
+        <DropdownMenuItem
+          onClick={() =>
+            signOut({
+              callbackUrl: "/",
+            })
+          }
+        >
+          <LogOutIcon className="mr-2" />
+          Sign out
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
@@ -59,8 +56,12 @@ export function Header() {
           DevFinder
         </Link>
         <div className="flex items-center gap-4">
-          <AccountDropdown />
-
+          {session.data && <AccountDropdown />}
+          {!session.data && (
+            <Button variant="link" onClick={() => signIn()}>
+              <LogInIcon className="mr-2" /> Sign in
+            </Button>
+          )}
           <ModeToggle />
         </div>
       </div>
