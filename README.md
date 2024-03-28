@@ -54,4 +54,4 @@ open http://localhost:3000
 
 ## You can access live version of the app on :
 
-[DevFinder](https://dev-finder-amber-two.vercel.app/)
+[DevFinder](https://dev-finder-amber-two.vercel.app/){:target="\_blank"}
