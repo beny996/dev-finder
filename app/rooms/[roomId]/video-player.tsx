@@ -42,6 +42,8 @@ export function DevFinderVideo({ room }: { room: Room }) {
     });
     setClient(client);
     const call = client.call("default", room.id);
+    call.camera.disable();
+    call.microphone.disable();
     call.join({ create: true });
     setCall(call);
 
