@@ -32,10 +32,11 @@ To get started with DevFinder, follow these steps:
 
 ```bash
 git clone https://github.com/beny996/dev-finder.git
+cd dev-finder
 npm install
 ```
 
-**Set up environment variables:**
+2. **Set up environment variables:**
 
 Create a `.env` file in the root directory and add your environment variables:
 
@@ -46,11 +47,15 @@ Create a `.env` file in the root directory and add your environment variables:
     NEXT_PUBLIC_GET_STREAM_API_KEY="your stream api key"
     GET_STREAM_SECRET_KEY="your stream secret key"
 
+3. **Run project**
+
 ```bash
 npm run dev
 ```
 
-open http://localhost:3000
+4. **View app in browser**
+
+Open http://localhost:3000
 
 ## You can access live version of the app on :
 
