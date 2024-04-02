@@ -5,6 +5,7 @@ import { Providers } from "./provider";
 import { Header } from "./header";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Toaster />
+          <Analytics />
           <NextTopLoader />
           <Header />
           <div className="container mx-auto">{children}</div>
