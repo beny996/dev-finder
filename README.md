@@ -11,16 +11,15 @@ DevFinder is an application built with Next.js, Drizzle, PostgreSQL, GeStream.io
 - **Screen Sharing:** Share your screen during video calls for better collaboration.
 - **Interactive Features:** Talk, react, and perform various actions during video calls.
 - **Edit and Delete Rooms:** Manage your created rooms by editing or deleting them.
-- **Authentication:** Uses Next Auth for secure authentication.
 
 ## Technologies Used
 
 - **Next.js:** Frontend framework for React applications.
-- **Drizzle:** Ethereum development framework.
+- **Drizzle:** TypeScript ORM.
 - **PostgreSQL:** Database for storing room and user information.
 - **GeStream.io:** Enables video calls and screen sharing.
 - **Vercel:** Deployment platform for hosting the application.
-- **Shadcn:** (Assuming this is a library or tool, please replace with correct information)
+- **Shadcn:** UI components library.
 - **Tailwind CSS:** Utility-first CSS framework for styling.
 - **TypeScript:** Typed superset of JavaScript for improved code quality and developer experience.
 
