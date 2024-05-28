@@ -21,6 +21,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@stream-io/video-react-sdk": "^0.5.5",
     "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.11",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "drizzle-orm": "^0.30.4",
